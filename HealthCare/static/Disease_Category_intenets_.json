@@ -1,0 +1,154 @@
+{"intents":[
+	{"tag":"fever",
+	 "patterns":["I have fever"],
+	 "responses":[
+			{
+			"type":["radio"],
+			"question": ["You said you have fever, What is your body Temperature?"],
+			"options": ["Above 100 degree F","Below 100 degree F"]
+			}
+			
+                  ] 
+	},
+	{"tag":"chemical_infection",
+	 "patterns":["my skin has turned silver"],
+	 "responses":[
+			{
+			"type":["radio"],
+			"question": ["You said yur skin has turned silver, are you or were you exposed to any chemicals? "],
+			"options": ["Yes I was","No I was not"]
+                        }
+                     ] 
+	},
+	{"tag":"loss_of_balance",
+	 "patterns":["I often loose my balance"],
+	 "responses":[
+			{
+			"type":["radio"],
+			"question": ["You said you often loose your balance, Is it regularly or sometimes?"],
+			"options": ["Sometimes","Regularly"]
+                        }
+                     ] 
+	},
+	{"tag":"cold_and_cough",
+	 "patterns":["I have cold and cough"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have cold and cough, what exactly are your symtoms?"],
+			"options": ["I get chills","I experience continuous sneezing","I have a running nose","I shiver a lot","I have lost my sense of smell","I have sinus","My eyes continuously water","I have a blocked nose"]
+                        }
+                     ] 
+	},
+	{"tag":"throat_or_thyroid",
+	 "patterns":["I have thyroid or throat infection"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have thyroid and throat infection, what exactly are your symtoms?"],
+			"options": ["My hands and feet are cold","I have sticky and stringy mucus","I have irritation in my throat","I think my thyroid has enlarged"]
+                        }
+                     ] 
+	},
+	{"tag":"eye_issues",
+	 "patterns":["I have eye related issues"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have eye related issues, what exactly are your symtoms?"],
+			"options": ["I have blurred and disoted vision","I have visual disturbances","My eyes have turned red in color"]
+                        }
+                     ] 
+	},
+	{"tag":"pain_or_stiffness",
+	 "patterns":["I am experiencing pain and stifness"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have pain and stiffness, where exactly is the pain or stiffness?"],
+			"options": ["I am experiencing pain during bowel movements","I have pain in my joints","I have pain in my abdomen","I have pain in my stomach","I have a muscle pain","I have pain in my anal region","I have pain in my chest","I experience pain while walking","I am experiencing stifness in my movements","I have got a stiff neck"]
+                        }
+                     ] 
+	},
+	{"tag":"skin_infection",
+	 "patterns":["I have got skin infection"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have skin infection, what exactly are your symtoms?"],
+			"options": ["I have a skin rash","I have skin erruptions","My skin is peeling","My skin has turned to yellow","I have blackheads","I have got pus filled pimples","I have patches on my body","I have got a red sore around my nose","I have yellow pus filled blisters","I have inflamation around my nails","I have red spots over the body","I have blisters","I have small dents in my nails"]
+                        }
+                     ] 
+	},
+	{"tag":"weakness_and_dizziness",
+	 "patterns":["I feel weak and dizzi"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have weak and dizzi, what exactly are your symtoms?"],
+			"options": ["I feel dizzi","I have weakness on one side of the body","I have muscle weakness","I am expereincing fatigue","I am feeling lethargic","I am exeriencing malaise","I am experiencing scurring"]
+                        }
+                     ] 
+	},
+	{"tag":"itch",
+	 "patterns":["I am feeling itchy"],
+	 "responses":[
+			{
+			"type":["radio"],
+			"question": ["You said you have an itch,where exactly is the itch?"],
+			"options": ["I have an external itch","I have an internal itch"]
+                        }
+                     ] 
+	},
+	{"tag":"urinary_and_anus_infection",
+	 "patterns":["I have urinary and anus infection"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have urinary and anus infection, what exactly are your symtoms?"],
+			"options": ["My urine has a foul smell","You feel like passing urine many times","I have dark colored urine","I have blood in urine","I have discomfort and burning during urination","I have experienced inflammation near the bladder","I have irritation near the anus area","I have blood in my stools"]
+                        }
+                     ] 
+	},	
+	{"tag":"digestion_issues",
+	 "patterns":["I have issues while digestion"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have digestion issues, what exactly are your symtoms?"],
+			"options": ["I have acidity","I am experiencing vomiting","I am experiencing nausea","I am experiencing indigestion","I am having constipation","I fart a lot","I have lost my appetite","I feel excessive hunger"]
+                        }
+                     ] 
+	},
+	{"tag":"mental_or_concenteration_issues",
+	 "patterns":["I have mental and concenteration issues"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have mental or concenteration issues, what exactly are your symtoms?"],
+			"options": ["I have a headache","I experience confusion and loss of memory sort of altered sensorium","I have mood swings","I have feeleing like I will faint","I am having depression","I feel irritated","I feel like unsteadiness"]
+                        }
+                     ] 
+	},
+	{"tag":"swelling",
+	 "patterns":["I have swelling"],
+	 "responses":[
+			{
+			"type":["checkbox"],
+			"question": ["You said you have swelling, where exactly is the swelling?"],
+			"options": ["I have selling in my joints","I have swollene lyph nodes","I have a puffy face and eyes"]
+                        }
+                     ] 
+	},
+	{"tag":"weight issues",
+	 "patterns":["I have weight related issues"],
+	 "responses":[
+			{
+			"type":["radio"],
+			"question": ["You said you have weight related issues, have you gained weight or have you lost weight"],
+			"options": ["I have gained weight","I have lost weight"]
+                        }
+                     ] 
+	}
+	   
+]}
