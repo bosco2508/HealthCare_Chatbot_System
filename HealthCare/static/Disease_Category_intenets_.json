@@ -36,7 +36,7 @@
 			{
 			"type":["checkbox"],
 			"question": ["You said you have cold and cough, what exactly are your symtoms?"],
-			"options": ["I get chills","I experience continuous sneezing","I have a running nose","I shiver a lot","I have lost my sense of smell","I have sinus","My eyes continuously water","I have a blocked nose"]
+			"options": ["I get chills","I cough a lot","I experience continuous sneezing","I have a running nose","I shiver a lot","I have lost my sense of smell","My eyes continuously water","I have sinus","I have a blocked nose"]
                         }
                      ] 
 	},
@@ -76,7 +76,7 @@
 			{
 			"type":["checkbox"],
 			"question": ["You said you have skin infection, what exactly are your symtoms?"],
-			"options": ["I have a skin rash","I have skin erruptions","My skin is peeling","My skin has turned to yellow","I have blackheads","I have got pus filled pimples","I have patches on my body","I have got a red sore around my nose","I have yellow pus filled blisters","I have inflamation around my nails","I have red spots over the body","I have blisters","I have small dents in my nails"]
+			"options": ["I have a skin rash","I have skin erruptions","My skin is peeling","My skin has turned to yellow","I have blackheads","I have got pus filled pimples","I have patches on my body","I have got a red sore around my nose","I have yellow pus filled blisters","I have inflamation around my nails","I have red spots over the body","I have blisters","I have small dents in my nails","There are brusies on my leg"]
                         }
                      ] 
 	},
@@ -86,7 +86,7 @@
 			{
 			"type":["checkbox"],
 			"question": ["You said you have weak and dizzi, what exactly are your symtoms?"],
-			"options": ["I feel dizzi","I have weakness on one side of the body","I have muscle weakness","I am expereincing fatigue","I am feeling lethargic","I am exeriencing malaise","I am experiencing scurring"]
+			"options": ["I feel dizzi","I get cramps","I have weakness on one side of the body","I have muscle weakness","I am expereincing fatigue","I am feeling lethargic","I am exeriencing malaise","I am experiencing scurring"]
                         }
                      ] 
 	},
@@ -106,7 +106,7 @@
 			{
 			"type":["checkbox"],
 			"question": ["You said you have urinary and anus infection, what exactly are your symtoms?"],
-			"options": ["My urine has a foul smell","You feel like passing urine many times","I have dark colored urine","I have blood in urine","I have discomfort and burning during urination","I have experienced inflammation near the bladder","I have irritation near the anus area","I have blood in my stools"]
+			"options": ["My urine has a foul smell","You feel like passing urine many times","I have dark colored urine","I have blood in urine","I have discomfort and burning during urination","I have experienced inflammation near the bladder","I have irritation near the anus area","I have blood in my stools","I am experiencing abnormal mensuration"]
                         }
                      ] 
 	},	
@@ -136,7 +136,7 @@
 			{
 			"type":["checkbox"],
 			"question": ["You said you have swelling, where exactly is the swelling?"],
-			"options": ["I have selling in my joints","I have swollene lyph nodes","I have a puffy face and eyes"]
+			"options": ["I have swelling in my joints","I have swollen lyph nodes","I have a puffy face and eyes","I have swollen hands and feets","I have prominent veins on my calfs","My legs are swollen","I have swollen blood vessels"]
                         }
                      ] 
 	},
@@ -146,7 +146,7 @@
 			{
 			"type":["radio"],
 			"question": ["You said you have weight related issues, have you gained weight or have you lost weight"],
-			"options": ["I have gained weight","I have lost weight"]
+			"options": ["I have gained weight","I have lost weight","I have gain unnnecessary extra weight(obesity)"]
                         }
                      ] 
 	}

@@ -2,6 +2,7 @@ from msilib.schema import RadioButton
 from operator import truediv
 from pickle import TRUE
 from tabnanny import check
+import pandas as pd
 from click import option
 from flask import Flask, jsonify, render_template, request
 import pandas as pd
@@ -55,8 +56,12 @@ def predict_class(sentence, model):
     return return_list
 
 def get_disease(symptom):
+    """symptomp=symptom.split(",")
+    lent=len(symptomp)
+    for i in range(lent,17):
+        symptom+=","""
     symptom=symptom.split(",")
-    print(symptom)
+    print(len(symptom))
     disease=[]
     for i in range(0,len(symptom)):
         if("Above 100 degree F" in symptom[i]):
@@ -71,6 +76,8 @@ def get_disease(symptom):
             disease.append("chills")
         elif("I experience continuous sneezing" in symptom[i]):
             disease.append("continuous_sneezing")
+        elif("I cough a lot" in symptom[i]):
+            disease.append("cough")
         elif("I have a running nose" in symptom[i]):
             disease.append("runny_nose")
         elif("I shiver a lot" in symptom[i]):
@@ -83,6 +90,7 @@ def get_disease(symptom):
             disease.append("watering_from_eyes")
         elif("I have a blocked nose" in symptom[i]):
             disease.append("congestion")
+
         elif("My hands and feet are cold" in symptom[i]):
             disease.append("cold_hands_and_feets")
         elif("I have sticky and stringy mucus" in symptom[i]):
@@ -133,7 +141,7 @@ def get_disease(symptom):
         elif("I have got pus filled pimples" in symptom[i]):
             disease.append("pus_filled_pimples")
         elif("I have patches on my body" in symptom[i]):
-            disease.append("dischromic_patches")
+            disease.append("dischromic _patches")
         elif("I have got a red sore around my nose" in symptom[i]):
             disease.append("red_sore_around_nose")
         elif("I have yellow pus filled blisters" in symptom[i]):
@@ -146,9 +154,11 @@ def get_disease(symptom):
             disease.append("blister")
         elif("I have small dents in my nails" in symptom[i]):
             disease.append("small_dents_in_nails")
+        elif("There are brusies on my leg" in symptom[i]):
+            disease.append("bruising")
+        
         elif("I am experiencing scurring" in symptom[i]):
             disease.append("scurring")
-        
         elif("I feel dizzi" in symptom[i]):
             disease.append("dizziness")
         elif("I have weakness on one side of the body" in symptom[i]):
@@ -161,15 +171,167 @@ def get_disease(symptom):
             disease.append("lethargy")
         elif("I am exeriencing malaise" in symptom[i]):
             disease.append("malaise")
+        elif("I get cramps" in symptom[i]):
+            disease.append("cramps")
       
         elif("I have an external itch" in symptom[i]):
             disease.append("itching")
         elif("I have an internal itch" in symptom[i]):
             disease.append("internal_itching")
 
+        elif("My urine has a foul smell" in symptom[i]):
+            disease.append("foul_smell_of urine")
+        elif("You feel like passing urine many times" in symptom[i]):
+            disease.append("continuous_feel_of_urine")
+        elif("I have dark colored urine" in symptom[i]):
+            disease.append("dark_urine")
+        elif("I have blood in urine" in symptom[i]):
+            disease.append("spotting_ urination")
+        elif("I have discomfort and burning during urination" in symptom[i]):
+            disease.append("burning_micturition")
+        elif("I have experienced inflammation near the bladder" in symptom[i]):
+            disease.append("bladder_discomfort")       
+        elif("I have irritation near the anus area" in symptom[i]):
+            disease.append("irritation_in_anus")
+        elif("I have blood in my stools" in symptom[i]):
+            disease.append("bloody_stool")    
+        elif("I am experiencing abnormal mensuration" in symptom[i]):
+            disease.append("abnormal_menstruation")  
         
-    return disease
+        elif("I have acidity" in symptom[i]):
+            disease.append("acidity")
+        elif("I am experiencing vomiting" in symptom[i]):
+            disease.append("vomiting")
+        elif("I am experiencing nausea" in symptom[i]):
+            disease.append("nausea")
+        elif("I am experiencing indigestion" in symptom[i]):
+            disease.append("indigestion")
+        elif("I am having constipation" in symptom[i]):
+            disease.append("constipation")
+        elif("I fart a lot" in symptom[i]):
+            disease.append("passage_of_gases")       
+        elif("I have lost my appetite" in symptom[i]):
+            disease.append("loss_of_appetite")
+        elif("I feel excessive hunger" in symptom[i]):
+            disease.append("excessive_hunger")   
 
+        elif("I have a headache" in symptom[i]):
+            disease.append("headache")
+        elif("I experience confusion and loss of memory sort of altered sensorium" in symptom[i]):
+            disease.append("altered_sensorium")
+        elif("I have mood swings" in symptom[i]):
+            disease.append("mood_swings")
+        elif("I have feeleing like I will faint" in symptom[i]):
+            disease.append("spinning_movements")
+        elif("I am having depression" in symptom[i]):
+            disease.append("depression")
+        elif("I feel irritated" in symptom[i]):
+            disease.append("irritability")       
+        elif("I feel like unsteadiness" in symptom[i]):
+            disease.append("unsteadiness")
+
+        elif("I have swelling in my joints" in symptom[i]):
+            disease.append("swelling_joints")
+        elif("I have swollen lyph nodes" in symptom[i]):
+            disease.append("swelled_lymph_nodes")
+        elif("I have a puffy face and eyes" in symptom[i]):
+            disease.append("puffy_face_and_eyes")
+        elif("I have swollen hands and feets" in symptom[i]):
+            disease.append("swollen_extremeties")
+        elif("I have prominent veins on my calfs" in symptom[i]):
+            disease.append("prominent_veins_on_calf")
+        elif("My legs are swollen" in symptom[i]):
+            disease.append("swollen_legs")       
+        elif("I have swollen blood vessels" in symptom[i]):
+            disease.append("swollen_blood_vessels")
+        
+        elif("I have gained weight" in symptom[i]):
+            disease.append("weight_gain")
+        elif("I have lost weight" in symptom[i]):
+            disease.append("weight_loss")       
+        elif("I have gain unnnecessary extra weight(obesity)" in symptom[i]):
+            disease.append("obesity")
+        
+        elif("" in symptom[i]):
+            disease.append(0) 
+        
+    """print(disease) 
+    df = pd.read_csv('static/disease.csv')
+    df1 = pd.read_csv('static/Symptom-severity.csv')
+    cols = ['Symptom_1', 'Symptom_2', 'Symptom_3', 'Symptom_4', 'Symptom_5','Symptom_6', 'Symptom_7', 'Symptom_8', 'Symptom_9', 'Symptom_10','Symptom_11', 'Symptom_12', 'Symptom_13', 'Symptom_14', 'Symptom_15','Symptom_16', 'Symptom_17']
+    
+    
+    df2= pd.DataFrame(disease)
+    cols=pd.DataFrame(cols)
+    vertical_stack = pd.concat([cols,df2], axis=1,ignore_index=True)
+
+    df3=pd.DataFrame(vertical_stack.transpose())
+    df3.reset_index(inplace=True)
+    df3.columns = df3.iloc[0] 
+    df3.drop(df3.columns[[0]], axis = 1, inplace = True)
+    df3 = df3[1:]
+    df3.fillna(0)
+    vals = df3.values
+    symptoms = df1['Symptom'].unique()
+    for i in range(len(symptoms)):
+        vals[vals == symptoms[i]] = df1[df1['Symptom'] == symptoms[i]]['weight'].values[0]
+    print(vals)
+    model_file = open("disease_model","rb")
+    model = pickle.load(model_file)
+    predict=model.predict(vals)
+    print(predict)
+    model_file_2 = open("disease_model_2","rb")
+    model_2 = pickle.load(model_file_2)
+    predict_2=model_2.predict(vals)
+    print(predict_2)
+"""
+    df=pd.read_csv("static/Training_Disease.csv")
+    cols=df.columns
+    l1=list(cols[:-1])
+    disease_values=['Fungal infection','Allergy','Drug Reaction',
+    'Peptic ulcer disease',
+    ' Migraine',
+    'Paralysis (brain hemorrhage)','Jaundice','Chicken pox',
+    'Common Cold','Dimorphic hemmorhoids(piles)',
+    'Varicoseveins','Hypothyroidism',
+    'Arthritis','(vertigo) Paroymsal  Positional Vertigo','Acne','Urinary tract infection','Psoriasis',
+    'Impetigo']
+
+    l2=[]
+    for x in range(0,len(l1)):
+        l2.append(0)
+    
+    for k in range(0,len(l1)):
+        for z in disease:
+            if(z==l1[k]):
+                l2[k]=1
+
+    disease_symp = [l2]
+    print(disease_symp)
+    gnb_model_file = open("GausianNB_disease_model","rb")
+    model = pickle.load(gnb_model_file)
+    predict_gnb=model.predict(disease_symp)
+
+    rf_model_file = open("RandomForest_disease_model","rb")
+    model = pickle.load(rf_model_file)
+    predict_rf=model.predict(disease_symp)
+
+    dt_model_file = open("DecisionTreet_disease_model","rb")
+    model = pickle.load(dt_model_file)
+    predict_dt=model.predict(disease_symp)
+    list_Disease=[]
+    for a in range(0,len(disease_values)):
+        if(predict_dt == a):
+            list_Disease.append(disease_values[a])
+    for a in range(0,len(disease_values)):
+        if(predict_rf == a):
+            list_Disease.append(disease_values[a]) 
+    for a in range(0,len(disease_values)):
+        if(predict_gnb == a):
+            list_Disease.append(disease_values[a])
+            
+    return list_Disease
+    
 
 
 
@@ -293,7 +455,17 @@ def Chat_disease():
             symptom_list_resp=symptom_list_resp[1:]
             disease=get_disease(symptom_list_resp)
             print(disease)
-            return jsonify({'disease':disease,'symp':symptom_list_resp})
+            if(disease[0]==disease[1]==disease[2]):
+                stmt="You are at very High Risk Of Having "+disease[0]
+            elif(disease[0]==disease[1]):
+                stmt="You have a high possibility of having "+disease[0]+" or you might also be suffering from "+disease[2]
+            elif(disease[1]==disease[2]):
+                stmt="You have a high possibility of having "+disease[1]+" or you might also be suffering from "+disease[0]
+            elif(disease[0]==disease[2]):
+                stmt="You have a high possibility of having "+disease[0]+" or you might also be suffering from "+disease[1]
+            else:
+                stmt="There is a possibility you might be suffering from"+disease[0]+","+disease[1]+","+disease[2]
+            return jsonify({'stmt':stmt,'symp':symptom_list_resp})
 
 
 
